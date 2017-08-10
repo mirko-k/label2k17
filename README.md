@@ -19,7 +19,13 @@ This is development only!
 ```
 $ git clone https://github.com/mirko-k/label2k17.git
 $ cd label2k17
-$ sudo bundle install
-$ sudo rake db:migrate
-$ sudo rake db:seed
+$ bundle install
+$ rake db:migrate
+$ rake db:seed
+```
+
+add a own <pre>database.yml</pre>
+
+```
+$ rails s
 ```
