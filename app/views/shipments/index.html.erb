@@ -1,0 +1,20 @@
+<h1>Shipments</h1>
+<%= link_to 'Neu', new_shipment_path %>
+<br/>
+<table>
+  <tr>
+    <th>Empfänger</th>
+    <th>Pakete</th>
+    <th colspan="3"></th>
+  </tr>
+
+  <% @shipments.each do |shipment| %>
+    <tr>
+      <td><%= shipment.address.name_1 %><br/><%= shipment.address.street %><br/><%= shipment.address.zip_code %> <%= shipment.address.city %></td>
+      <td><%= shipment.parcel_count %></td>
+      <td><%= link_to 'Show', shipment_path(shipment) %></td>
+      <td><%= link_to 'Edit', edit_shipment_path(shipment) %></td>
+      <td><%= link_to 'Destroy', shipment_path(shipment), method: :delete,  data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

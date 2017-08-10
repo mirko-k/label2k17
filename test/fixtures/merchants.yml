@@ -1,0 +1,7 @@
+fo:
+  name: 'Company A'
+  address: max_muster
+
+get:
+  name: 'Company B'
+  address: max_muster

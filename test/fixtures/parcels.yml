@@ -1,0 +1,11 @@
+max_muster_1:
+  tracking_no: '01010000001'
+  weight: 1.0
+  parcel_no: 1
+  shipment: max_muster
+
+max_muster_2:
+  tracking_no: '01010000002'
+  weight: 1.0
+  parcel_no: 2
+  shipment: max_muster

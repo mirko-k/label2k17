@@ -1,0 +1,49 @@
+<%= form_for @shipment do |shipment_form| %>
+<% if @shipment.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@shipment.errors.count, "error") %> prohibited
+      this shipment from being saved:
+    </h2>
+    <ul>
+      <% @shipment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<dl>
+  <dt><%= shipment_form.label :merchant_id %></dt>
+  <dd><%= shipment_form.select :merchant_id, options_for_select( Merchant.order(:name).map{|merchant| [merchant.name, merchant.id]}) %></dd>
+  <%= shipment_form.fields_for :address do |address_form| %>
+      <dt><%= address_form.label :company_name %></dt>
+      <dd><%= address_form.text_field :company_name %></dd>
+      <dt><%= address_form.label :name_1 %></dt>
+      <dd><%= address_form.text_field :name_1 %></dd>
+      <dt><%= address_form.label :name_2 %></dt>
+      <dd><%= address_form.text_field :name_2 %></dd>
+      <dt><%= address_form.label :additions %></dt>
+      <dd><%= address_form.text_field :additions %></dd>
+      <dt><%= address_form.label :street %></dt>
+      <dd><%= address_form.text_field :street %></dd>
+      <dt><%= address_form.label :city %></dt>
+      <dd><%= address_form.text_field :city %></dd>
+      <dt><%= address_form.label :zip_code %></dt>
+      <dd><%= address_form.text_field :zip_code %></dd>
+      <dt><%= address_form.label :telephone %></dt>
+      <dd><%= address_form.text_field :telephone %></dd>
+      <dt><%= address_form.label :country_id %></dt>
+      <dd><%= address_form.select :country_id, options_for_select( Country.order(:name).map{|country| [country.name, country.id]}) %></dd>
+    <% end %>
+    <dt><%= shipment_form.label :parcel_count %></dt>
+    <dd><%= shipment_form.text_field :parcel_count %></dd>
+    <dt><%= shipment_form.label :cod_amount %></dt>
+    <dd><%= shipment_form.text_field :cod_amount %></dd>
+    <dt><%= shipment_form.label :hauler_id %></dt>
+    <dd><%= shipment_form.select :hauler_id, options_for_select( Hauler.order(:name).map{|hauler| [hauler.name, hauler.id]}) %></dd>
+  </dl>
+  <p>
+    <%= shipment_form.submit %>
+  </p>
+<% end %>

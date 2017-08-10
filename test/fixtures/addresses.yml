@@ -1,0 +1,6 @@
+max_muster:
+  country_id: 1
+  name_1: 'Max Muster'
+  street: 'Musterstraße'
+  zip_code: '0815'
+  city: 'Musterhausen'

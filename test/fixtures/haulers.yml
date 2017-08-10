@@ -1,0 +1,8 @@
+dpd:
+  name: 'DPD'
+
+ups:
+  name: 'UPS'
+
+hvg:
+  name: 'HVG'
