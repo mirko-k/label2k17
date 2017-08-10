@@ -24,7 +24,7 @@ $ rake db:migrate
 $ rake db:seed
 ```
 
-add a own <pre>database.yml</pre>
+add a own <code>database.yml</code> with your database credentials
 
 ```
 $ rails s
